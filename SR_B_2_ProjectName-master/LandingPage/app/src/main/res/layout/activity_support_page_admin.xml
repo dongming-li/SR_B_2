@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_home_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/showUserID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/showUserID"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/userID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_toEndOf="@+id/showUserID"
+            android:layout_toRightOf="@+id/showUserID"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/showUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showUserID"
+            android:text="@string/showUserEmail"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/showUserEmail"
+            android:layout_toRightOf="@+id/showUserEmail"
+            android:layout_below="@+id/showUserID"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/userIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showUserEmail"
+            android:layout_marginEnd="18dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/userIndicator"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/showUserMessage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/userIndicator"
+            android:layout_marginEnd="18dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:paddingBottom="10dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/adminIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showUserMessage"
+            android:layout_marginEnd="18dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/adminIndicator"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/replyUserTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/adminIndicator"
+            android:layout_marginEnd="18dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:gravity="top"
+            android:hint="@string/replyUserMessage"
+            android:inputType="textMultiLine"
+            android:selectAllOnFocus="true" />
+
+        <Button
+            android:id="@+id/buttonReplyUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/replyUserTextBox"
+            android:layout_marginLeft="240dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/reply_user" />
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_home_page">
+
+        <ExpandableListView
+            android:id="@+id/nav_drawer_sub_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:groupIndicator="@null"
+            android:paddingTop="180dp" />
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
